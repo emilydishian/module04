@@ -1,5 +1,9 @@
 export type Color = 'red' | 'green' | 'yellow';
 
+const DEFAULT_RED_TIME = 20;
+const DEFAULT_YELLOW_TIME = 5;
+const DEFAULT_GREEN_TIME = 15;
+
 export function colorAtNextSecond(color: Color, time: number): Color {
   switch (color) {
     case 'red':
@@ -14,20 +18,28 @@ export function colorAtNextSecond(color: Color, time: number): Color {
 }
 
 export class TrafficLight {
+  // Use a map that is specific for each traffic light to map from color to time:
   public colorToDuration: Map<Color, number> = new Map<Color, number>();
 
   public color: Color = 'red';
 
+  public timeLeft: number;
+
   constructor() {
-    this.colorToDuration.set('red', 20);
-    this.colorToDuration.set('yellow', 5);
-    this.colorToDuration.set('green', 15);
+    // Set default values for the map for backwards compatibility:
+    this.colorToDuration.set('red', DEFAULT_RED_TIME);
+    this.colorToDuration.set('yellow', DEFAULT_YELLOW_TIME);
+    this.colorToDuration.set('green', DEFAULT_GREEN_TIME);
+
+    this.timeLeft = this.getColorTime();
   }
 
+  // Allow the time for any given color to be set manually for each traffic light individually:
   public setColorTime(color: Color, time: number) {
     this.colorToDuration.set(color, time);
   }
 
+  // Get the amount of time matching the current color:
   public getColorTime(): number {
     const duration = this.colorToDuration.get(this.color);
     if (duration === undefined) {
@@ -36,25 +48,11 @@ export class TrafficLight {
     return duration;
   }
 
-  public timeLeft = this.getColorTime();
-
   /* simulate one second passing */
   public tick() {
-    this.color = colorAtNextSecond(this.color, this.getColorTime());
+    this.color = colorAtNextSecond(this.color, this.timeLeft);
     if (this.timeLeft === 1) {
-      switch (this.color) {
-        case 'red':
-          this.getColorTime() = 20;
-          break;
-        case 'yellow':
-          this.timeLeft = 5;
-          break;
-        case 'green':
-          this.timeLeft = 15;
-          break;
-        default:
-          throw new Error("This error shouldn't occur.");
-      }
+      this.timeLeft = this.getColorTime();
     } else {
       this.timeLeft -= 1;
     }

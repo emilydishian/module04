@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1737126958284" clover="3.2.0">
-  <project timestamp="1737126958284" name="All files">
-    <metrics statements="22" coveredstatements="20" conditionals="16" coveredconditionals="12" methods="4" coveredmethods="4" elements="42" coveredelements="36" complexity="0" loc="22" ncloc="22" packages="1" files="1" classes="1"/>
-    <file name="TrafficLight.ts" path="C:\Users\emily\Desktop\module04-traffic-light-activity\src\TrafficLight.ts">
-      <metrics statements="22" coveredstatements="20" conditionals="16" coveredconditionals="12" methods="4" coveredmethods="4"/>
+<coverage generated="1737439474237" clover="3.2.0">
+  <project timestamp="1737439474237" name="All files">
+    <metrics statements="27" coveredstatements="24" conditionals="13" coveredconditionals="9" methods="7" coveredmethods="6" elements="47" coveredelements="39" complexity="0" loc="27" ncloc="27" packages="1" files="1" classes="1"/>
+    <file name="betterTrafficLight.ts" path="C:\Users\gardy\CS4530\module04\module04-traffic-light-activity\src\betterTrafficLight.ts">
+      <metrics statements="27" coveredstatements="24" conditionals="13" coveredconditionals="9" methods="7" coveredmethods="6"/>
       <line num="3" count="1" type="stmt"/>
-      <line num="4" count="6" type="cond" truecount="3" falsecount="1"/>
-      <line num="6" count="4" type="cond" truecount="2" falsecount="0"/>
-      <line num="8" count="1" type="cond" truecount="1" falsecount="1"/>
-      <line num="10" count="1" type="cond" truecount="1" falsecount="1"/>
-      <line num="12" count="0" type="stmt"/>
-      <line num="16" count="1" type="stmt"/>
-      <line num="17" count="6" type="stmt"/>
-      <line num="19" count="6" type="stmt"/>
-      <line num="23" count="6" type="stmt"/>
-      <line num="24" count="6" type="cond" truecount="2" falsecount="0"/>
-      <line num="25" count="4" type="cond" truecount="3" falsecount="1"/>
-      <line num="27" count="1" type="stmt"/>
-      <line num="28" count="1" type="stmt"/>
-      <line num="30" count="1" type="stmt"/>
-      <line num="31" count="1" type="stmt"/>
-      <line num="33" count="2" type="stmt"/>
-      <line num="34" count="2" type="stmt"/>
-      <line num="36" count="0" type="stmt"/>
-      <line num="39" count="2" type="stmt"/>
-      <line num="44" count="6" type="stmt"/>
-      <line num="48" count="4" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="8" count="6" type="cond" truecount="3" falsecount="1"/>
+      <line num="10" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="12" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="14" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="16" count="0" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="22" count="6" type="stmt"/>
+      <line num="24" count="6" type="stmt"/>
+      <line num="30" count="6" type="stmt"/>
+      <line num="31" count="6" type="stmt"/>
+      <line num="32" count="6" type="stmt"/>
+      <line num="34" count="6" type="stmt"/>
+      <line num="39" count="0" type="stmt"/>
+      <line num="44" count="10" type="stmt"/>
+      <line num="45" count="10" type="cond" truecount="0" falsecount="1"/>
+      <line num="46" count="0" type="stmt"/>
+      <line num="48" count="10" type="stmt"/>
+      <line num="53" count="6" type="stmt"/>
+      <line num="54" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="55" count="4" type="stmt"/>
+      <line num="57" count="2" type="stmt"/>
+      <line num="62" count="6" type="stmt"/>
+      <line num="66" count="4" type="stmt"/>
     </file>
   </project>
 </coverage>
