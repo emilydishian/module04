@@ -18,11 +18,12 @@ export function colorAtNextSecond(color: Color, time: number): Color {
 }
 
 export class TrafficLight {
-  // Use a map that is specific for each traffic light to map from color to time:
+  // Use a map that is specific for each traffic light to map from color to time in seconds:
   public colorToDuration: Map<Color, number> = new Map<Color, number>();
 
   public color: Color = 'red';
 
+  // This is also in seconds, representing the amount of time left for the current color before switching to the next:
   public timeLeft: number;
 
   constructor() {
