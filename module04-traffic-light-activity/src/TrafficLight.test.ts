@@ -1,4 +1,4 @@
-import { TrafficLight, Color } from './TrafficLight';
+import { TrafficLight, Color } from './betterTrafficLight';
 
 describe('tests for timer', () => {
   test('after 17, time should be 16', () => {
