@@ -1,8 +1,9 @@
 export type Color = 'red' | 'green' | 'yellow';
+export type LightDuration = { duration: number };
 
-const DEFAULT_RED_TIME = 20;
-const DEFAULT_YELLOW_TIME = 5;
-const DEFAULT_GREEN_TIME = 15;
+const defaultRedTime: LightDuration = { duration: 20 };
+const defaultYellowTime: LightDuration = { duration: 5 };
+const defaultGreenTime: LightDuration = { duration: 15 };
 
 export function colorAtNextSecond(color: Color, time: number): Color {
   switch (color) {
@@ -19,7 +20,7 @@ export function colorAtNextSecond(color: Color, time: number): Color {
 
 export class TrafficLight {
   // Use a map that is specific for each traffic light to map from color to time in seconds:
-  public colorToDuration: Map<Color, number> = new Map<Color, number>();
+  public colorToDuration: Map<Color, LightDuration> = new Map<Color, LightDuration>();
 
   public color: Color = 'red';
 
@@ -28,16 +29,16 @@ export class TrafficLight {
 
   constructor() {
     // Set default values for the map for backwards compatibility:
-    this.colorToDuration.set('red', DEFAULT_RED_TIME);
-    this.colorToDuration.set('yellow', DEFAULT_YELLOW_TIME);
-    this.colorToDuration.set('green', DEFAULT_GREEN_TIME);
+    this.colorToDuration.set('red', defaultRedTime);
+    this.colorToDuration.set('yellow', defaultYellowTime);
+    this.colorToDuration.set('green', defaultGreenTime);
 
     this.timeLeft = this.getColorTime();
   }
 
   // Allow the time for any given color to be set manually for each traffic light individually:
   public setColorTime(color: Color, time: number) {
-    this.colorToDuration.set(color, time);
+    this.colorToDuration.set(color, { duration: time });
   }
 
   // Get the amount of time matching the current color:
@@ -46,7 +47,7 @@ export class TrafficLight {
     if (duration === undefined) {
       throw new Error('Color duration is undefined.');
     }
-    return duration;
+    return duration.duration;
   }
 
   /* simulate one second passing */
