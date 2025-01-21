@@ -1,4 +1,6 @@
 export type Color = 'red' | 'green' | 'yellow';
+// add a new type to contain the duration of the light that can vary between color and the traffic light.
+// the duration is in seconds
 export type LightDuration = { duration: number };
 
 const defaultRedTime: LightDuration = { duration: 20 };
